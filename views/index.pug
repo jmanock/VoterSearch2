@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  a(href='mailto:jonmanock@gmail.com')
+    i(class='fa fa-envelope-o')
+  h1 Florida Voter Search
+  input#search(type='text' placeholder='John Doe' autofocus)
+  div#loader
+  table
+    thead
+      tr
+        th.name NAME
+        th.gender GENDER
+        th.age AGE
+        th.address ADDRESS
+        th.apt APT/UNIT
+        th.city CITY
+        th.zip ZIP
+      div#results
