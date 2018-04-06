@@ -20,7 +20,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.get('/search', function(req, res){
+  var firstName = req.query.firstName;
+  var lastName = req.query.lastName;
+  var fullName = firstName + ' '+ lastName;
+  console.log(fullName);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
