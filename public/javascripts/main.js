@@ -18,11 +18,10 @@ $(document).ready(function(){
           firstName:firstName,
           lastName:lastName
         };
-
         $.get('/search', params, function(data){
 
         });
       }
     }
-  });
+  })
 });
