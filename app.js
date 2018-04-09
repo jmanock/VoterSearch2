@@ -25,22 +25,22 @@ app.get('/search', function(req, res){
   var lastName = req.query.lastName;
   var fullName = firstName + ' '+ lastName;
 
-  //console.log(fullName);
+  console.log(fullName);
 
   var instream = fs.createReadStream('public/voters/2012Florida.txt');
   var outstream = new stream;
   var rl = readline.createInterface(instream, outstream);
 
-  rl.on('line', function(line){
-    var results = line.toUpperCase();
-    console.log(fullName);
-    if(results.includes(firstName) && results.includes(lastName)){
-      results = results.split(/[\t]+/);
-      console.log(results);
-    }
-  }).on('close', function(){
-    console.log('All Done Friend!!!');
-  });
+  // rl.on('line', function(line){
+  //   var results = line.toUpperCase();
+  //   console.log(fullName);
+  //   if(results.includes(firstName) && results.includes(lastName)){
+  //     results = results.split(/[\t]+/);
+  //     console.log(results);
+  //   }
+  // }).on('close', function(){
+  //   console.log('All Done Friend!!!');
+  // });
 });
 
 // catch 404 and forward to error handler
